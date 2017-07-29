@@ -1,18 +1,20 @@
-# JiaYi Note
+## JiaYi Note
 
-#### Arduino
+### Arduino
 |Note|Position|
 |---|---|
 |NFC_DHT|[Link](https://github.com/Plusone7/learnNote/blob/master/arduino_note/NFC_DHT.md)|
 |ArduinoBasic|[Link](https://github.com/Plusone7/learnNote/blob/master/arduino_note/arduinoBasic.md)|
 |RaspberryPi|[Link](https://github.com/Plusone7/learnNote/blob/master/arduino_note/onRaspberryPI.md)|
 
-#### Linux
+---
+### Linux
 |Note|Position|
 |---|---|
 |CommandLine|[Link](https://github.com/Plusone7/learnNote/blob/master/cmdline_note/cmd.md)|
 
-#### NodeJs
+---
+### NodeJs
 |Note|Position|
 |---|---|
 |Express|[Link](https://github.com/Plusone7/learnNote/blob/master/nodejs_note/express.md)|
@@ -22,7 +24,8 @@
 |NodeBasic|[Link](https://github.com/Plusone7/learnNote/blob/master/nodejs_note/nodeBasic.md)|
 |NodeMqtt|[Link](https://github.com/Plusone7/learnNote/blob/master/nodejs_note/nodeMqtt.md)|
 
-#### Python
+---
+### Python
 |Note|Position|
 |---|---|
 |DjongoNote|[Link](https://github.com/Plusone7/learnNote/blob/master/python_note/djongoNote.md)|
