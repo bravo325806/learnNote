@@ -1,4 +1,3 @@
-## JiaYi Note
 
 ### Arduino
 |Note|Position|
