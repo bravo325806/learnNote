@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet">
+  <style>
+    .green{
+      background-color: green;
+      height: 80vh;
+    }
+    /*xs*/
+    @media (max-width:575px){
+      .green{
+        background-color:red;
+        height: 80vh;
+        }
+    }
+    /*xm*/
+    @media(min-width:576px) and (max-width:767px){
+      .green{
+        background-color:blue;
+        height: 80vh;
+        } 
+    } 
+    /*md*/
+     @media(min-width:768px) and (max-width:991px){
+      .green{
+        background-color:black;
+        height: 80vh;
+        } 
+    } 
+    /*lg*/
+     @media(min-width:992px) and (max-width:1199px){
+      .green{
+        background-color:orange;
+        height: 80vh;
+        } 
+    } 
+    /*xl*/
+    @media (min-width:1120px){
+      .green{
+        background-color:pink;
+        height: 80vh;
+        }
+    }
+
+  </style>
+</head>
+<body>
+<h1 class="herotext">Lorem ipsum dolor sit amet.</h1>
+  <div class="container-fluid green">
+    <p>aaaa</p>
+  </div>
+
+</body>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.slim.js"></script>
+</html>

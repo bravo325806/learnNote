@@ -1,0 +1,17 @@
+body{
+  background: url(redfox.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+.herotext{
+  color: #fff;
+  margin-top: 20%;
+  text-align: center;
+  font-size: 75px;
+  letter-spacing: -.05em;
+  line-height: 1.2em;
+  font-family: 'Francois One', sans-serif;
+}
+.centerimg{
+  height: 200px;
+  width: auto;
+}
