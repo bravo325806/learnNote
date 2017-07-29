@@ -174,7 +174,7 @@ void loop()
 
 node.js :
 
-```
+```js
 var SarialPort = require("serialport");
 var port = new SarialPort("/dev/cu.usbmodem1411",{
    parser:SarialPort.parsers.readline('\n') 
