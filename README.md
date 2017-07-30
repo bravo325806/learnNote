@@ -6,13 +6,11 @@
 |ArduinoBasic|[Link](https://github.com/Plusone7/learnNote/blob/master/arduino_note/arduinoBasic.md)|
 |RaspberryPi|[Link](https://github.com/Plusone7/learnNote/blob/master/arduino_note/onRaspberryPI.md)|
 
----
 ### Linux
 |Note|Position|
 |---|---|
 |CommandLine|[Link](https://github.com/Plusone7/learnNote/blob/master/cmdline_note/cmd.md)|
 
----
 ### NodeJs
 |Note|Position|
 |---|---|
@@ -23,7 +21,6 @@
 |NodeBasic|[Link](https://github.com/Plusone7/learnNote/blob/master/nodejs_note/nodeBasic.md)|
 |NodeMqtt|[Link](https://github.com/Plusone7/learnNote/blob/master/nodejs_note/nodeMqtt.md)|
 
----
 ### Python
 |Note|Position|
 |---|---|
