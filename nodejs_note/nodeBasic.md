@@ -1,3 +1,7 @@
+
+
+安裝參考資料：http://icarus4.logdown.com/posts/175092-nodejs-installation-guide
+
 Use the `createServer()` method to create an HTTP server:
 
 ```javascript
