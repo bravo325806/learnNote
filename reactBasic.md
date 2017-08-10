@@ -56,6 +56,35 @@ function deteTOstring(d){
 <h3>{dateTOstring(new Date())}</h3>
 ```
 
+使用變數
+```js
+getIsComplete:function(){
+  return this.state.isComplete ? 'is-comolete':'';
+},
+render:function(){
+  var isComplete = this.getIsComplete();
+  return <div className={isComplete}>..</div>;
+}
+```
+
+使用函式
+
+```
+getIsComplete:function(){
+  return this.state.isComplete ? 'is-comolete':'';
+},
+render:function(){
+  return <div className={this.getIsComplete()};>..</div>;
+}
+```
+
+
+
+
+
+
+
+
 
 
 
