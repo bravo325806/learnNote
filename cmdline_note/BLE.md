@@ -28,3 +28,27 @@ Check your system clock
 sudo date -s "201708/16 11:21:32"
 ```
 （可以用`date｀看裝置的現在時間）
+
+```
+make
+```
+should see no error messages
+
+After bluez has been compiled it can be installed by running the following command:
+```
+sudo make install
+```
+
+check the bluez service is installed
+```
+systemctl status bluetooth
+```
+```
+sudo systemctl start bluetooth
+sudo systemctl stop bluetooth
+```
+
+
+
+
+
