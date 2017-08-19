@@ -48,8 +48,10 @@ docker stop <container_id>
 ```
 docker rm <container_id>
 ```
-
-
+刪除所有container:
+```
+docker rm `docker ps --no-trunc -aq`
+```
 https://hub.docker.com
 
 
