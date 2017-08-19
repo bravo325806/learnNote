@@ -52,6 +52,13 @@ docker rm <container_id>
 ```
 docker rm `docker ps --no-trunc -aq`
 ```
+
+```
+# Delete all containers
+docker rm $(docker ps -a -q)
+# Delete all images
+docker rmi $(docker images -q)
+```
 https://hub.docker.com
 
 
