@@ -1,4 +1,14 @@
 
+### Creating a New Application:
+```
+npm install -g create-react-app
+create-react-app my-app
+
+cd my-app
+npm start
+```
+
+
 什麼是JSX ?
 用於在React元件中建立標記（類似XML語法）
 單純使用React的函式：
