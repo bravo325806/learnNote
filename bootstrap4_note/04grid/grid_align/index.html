@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet">
+
+    <style>
+        .con {
+            background-color: gray;
+            height: 100vh;
+        }
+
+        .grey {
+            background-color: pink;
+            height: 50px;
+        }
+
+        .gr {
+            background-color: aquamarine;
+            height: 50px;
+        }
+
+        .rowHeight {
+            height: 200px;
+            background-color: #333;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="container con">
+        <!-- align-items-start  -->
+        <div class="row rowHeight align-items-start">
+            <div class="col-sm gr">column1</div>
+            <div class="col-sm grey">column2</div>
+            <div class="col-sm gr">column3</div>
+        </div>
+        <br>
+        <!-- align-items-center  -->
+        <div class="row rowHeight align-items-center">
+            <div class="col-sm gr">column1</div>
+            <div class="col-sm grey">column2</div>
+            <div class="col-sm gr">column3</div>
+        </div>
+        <br>
+        <!-- align-items-end  -->
+        <div class="row rowHeight align-items-end">
+            <div class="col-sm gr">column1</div>
+            <div class="col-sm grey">column2</div>
+            <div class="col-sm gr">column3</div>
+        </div>
+    </div>
+     <!-- align-self-end  -->
+    <div class="container con">
+        <div class="row rowHeight">
+            <div class="col gr align-self-end">column1</div>
+            <div class="col grey align-self-center">column2</div>
+            <div class="col gr align-self-start">column3</div>
+        </div>
+    </div>
+</body>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.slim.js"></script>
+
+</html>
