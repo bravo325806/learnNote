@@ -1,4 +1,27 @@
+
+
+安裝參考資料：http://icarus4.logdown.com/posts/175092-nodejs-installation-guide
+
 Use the `createServer()` method to create an HTTP server:
+
+
+JSON格式轉換：
+`
+JSON.stringify() 
+`
+```javascript
+A = {
+    "V_a" : 1,
+    "I_a" : 2,
+    "kW_a": 3,
+    "kvar_a": 4,
+    "kVA_a": 5
+}
+console.log(JSON.stringify(A));
+```
+
+
+
 
 ```javascript
 var http = require('http');
