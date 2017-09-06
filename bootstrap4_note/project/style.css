@@ -7,7 +7,7 @@ body{
     font-family: 'Gudea', sans-serif;
 }
 .rowHeight{
-    height:500px;
+    height:300px;
 }
 
 h1{
@@ -15,7 +15,20 @@ h1{
     font-size: 2.5em;
 }
 
-h1bg{
+.h1bg{
     background-color: #c1c1c1;
     opacity: 0.8;
+}
+img{
+    height: 300px;
+    width: 300px;
+}
+.footer{
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+}
+p{  
+    font-size: 18px;
+    padding: 8px;
 }
