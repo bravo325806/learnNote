@@ -1,0 +1,21 @@
+
+body{
+    background: url(doona.jpg) no-repeat center center fixed;
+    background-size: cover;
+    -webkit-backdrop-size:cover;
+    
+    font-family: 'Gudea', sans-serif;
+}
+.rowHeight{
+    height:500px;
+}
+
+h1{
+    color:#fff;
+    font-size: 2.5em;
+}
+
+h1bg{
+    background-color: #c1c1c1;
+    opacity: 0.8;
+}
