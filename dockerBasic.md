@@ -21,7 +21,7 @@ sudo docker images -a
 ```
 sudo docker rmi image
 ```
-
+* 無法刪除container正在使用的image
 ### 開啟服務:
 
 使用該映像檔建立一個容器 執行 bash
