@@ -13,14 +13,18 @@ sudo docker pull ubuntu:16.04
 ```
 沒有指定 <image_version>，預設系統取得 latest 版本
 
-### 顯示本機已有的映像檔
+### 顯示本機所有的映像檔
 ```
 sudo docker images -a
 ```
--a : All
+刪除映像檔
+```
+sudo docker rmi image
+```
 
 ### 開啟服務:
-使用該映像檔了 建立一個容器 執行 bash
+
+使用該映像檔建立一個容器 執行 bash
 ```
 sudo docker run -t -i -d -p 1000:80 ubuntu:16.04 /bin/bash
 ```
@@ -29,9 +33,13 @@ sudo docker run -t -i -d -p 1000:80 ubuntu:16.04 /bin/bash
 -i : I/O
 如果沒有指定 TAG，預設使用 latest
 
-### 看目前docker container
+### 看目前docker container (-a 所有）
 ```
 sudo docker ps -a
+```
+查看正在執行的
+```
+sudo docker ps 
 ```
 
 ### container 操作
