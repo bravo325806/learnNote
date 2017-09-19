@@ -1,3 +1,19 @@
+## 為什麼要用docker ?
+
+* 一致的運行環境
+* 快速地啟動時間
+* 持續交付和部署
+* 遷移容易
+* 維護和擴展簡單
+
+## docker組成
+* 映像（Image）
+* 容器（Container）
+* 倉庫（Repository）
+
+常用的倉庫 [Docker Hub](https://hub.docker.com/)
+
+---
 
 ## docker 基本指令：
 
@@ -10,24 +26,29 @@ sudo docker images -a
 docker pull <image_name>:<version>
 ```
 ### 使用image創造container:
+
 ```
 docker run ubuntu:14.04
 ```
-沒有指定 <image_version>，預設系統取得 latest 版本
+以Ubuntu映像為例，ubuntu是倉庫的名字，其內包含有不同的版本標籤14.04,16.04。
+我們可以通過ubuntu:14.04，或者ubuntu:16.04來具體指定所需哪個版本的映像，沒有指定 <image_version>，預設系統取得 latest 版本
+
 沒有ubuntu:14.04 image的話會自動download
 
 ```
 sudo docker run -t -i -d -p 1000:80 ubuntu:14.04 /bin/bash
 ```
--d --detach
--i --interactive
+```
+-d --detach 交互操作
+-i --interactive 終端
 -t --tty
 -p --publish
-
+```
 ### 查看所有container的狀態：
 ```
 docker ps -a 
 ```
+會看到：
 ```
 |CONTAINER ID | IMAGE | COMMAND | CREATED | STATUS | PORTS | NAMES
 ```
