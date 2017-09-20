@@ -7,6 +7,8 @@
 * 容器（Container）
 * 倉庫（Repository）
 
+
+
 常用的倉庫 [Docker Hub](https://hub.docker.com/)
 ###### Docker Hub repositories let you share images with co-workers, customers, or the Docker community at large. 
 
@@ -28,14 +30,19 @@ sudo docker images -a
 ```
 docker run ubuntu:14.04
 ```
-以Ubuntu映像為例，ubuntu是倉庫的名字，其內包含有不同的版本標籤14.04,16.04。
-我們可以通過ubuntu:14.04，或者ubuntu:16.04來具體指定所需哪個版本的映像，沒有指定 <image_version>，預設系統取得 latest 版本
 
 沒有ubuntu:14.04 image的話會自動download
 
 ```
+Image是Container的基礎，每次docker run 都會指定是哪個Image為容器運行基礎，
+以Ubuntu映像為例，ubuntu是倉庫的名字，其內包含有不同的版本標籤14.04,16.04 
+我們可以通過ubuntu:14.04或ubuntu:16.04來具體指定所需哪個版本的映像(沒有指定 <image_version>，預設系統取得 latest 版本)
+```
+
+```
 sudo docker run -t -i -d -p 1000:80 ubuntu:14.04 /bin/bash
 ```
+
 ```
 -d --detach 交互操作
 -i --interactive 終端
@@ -84,7 +91,6 @@ docker stop <container_ID>
 docker stop ebacf392ca8236
 ```
 
-
 簡單的webserver docker範例:
 ```
 docker run --name webserver -d -p 80:80 nginx
@@ -93,6 +99,65 @@ image為nginx
 name設定為webserver
 
 啟動後可以直接訪問 http://localhost 就會看到web頁面了！
+
+
+
+### 來寫dockerfile吧！
+
+上面我們所pull到本地的Image都是來自[Docker Hub](https://hub.docker.com/)
+自己寫就可以自己去定制每一層的配置，我們可以把每一層建構安裝或操作的命令都寫入一個腳本用這個腳本來建構自己的Image。
+Image是多層存儲每一層是在前一層的基礎上進行的修改，容器也是多層存儲是在以鏡像為基礎層在其基礎上加一層作為容器運行時的儲存層。
+
+Dockerfile是一個腳本，包含兩個部分：指令(Instrunction)和要做的行為(Argument)
+
+
+##### FROM
+From 為選擇哪一個作業系統為基底，當然也可以選擇docker hub上的image(例如：mongo python node等)
+
+```
+FROM ubuntu  
+```
+除了基礎的image外，`scratch`這個空白的image
+```
+FROM scratch
+```
+直接FROM scratch會讓鏡像體積更加小
+
+
+##### RUN 執行命令
+RUN就像shell腳本後面直接加上終端機的命令就可以了
+
+```
+RUN apt-get update
+```
+
+Docker file 每一個指令都會建立一層，一個RUN就是一層。
+``` shell
+FROM ubuntu:14.04
+MAINTAINER plusone lioa
+RUN apt-get update -y 
+RUN apt-get install -y 
+RUN apt-get python3 -y 
+RUN python3-pip -y
+RUN apt-get autoclean 
+RUN pip3 install django 
+
+```
+###### 上面這樣我們就建立了六層image，單純的update也建立了一層，這個image是沒有意義的！
+
+所以我們會用&&來做連接：
+
+```
+FROM ubuntu:14.04
+MAINTAINER plusone lioa
+
+RUN apt-get update -y \
+&& apt-get install -y \
+           python3 \
+           python3-pip \
+           autoclean 
+&& pip3 install django 
+```
 
 
 
