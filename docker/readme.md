@@ -1,11 +1,7 @@
-### 為什麼要用docker ?
 
-* 一致的運行環境
-* 快速地啟動時間
-* 遷移容易
-* 維護和擴展簡單
 
-### docker組成
+## docker
+![docker](https://github.com/Plusone7/learnNote/blob/master/docker/img/docker.png?raw=true)
 
 * 映像[(docker Images)](https://docs.docker.com/engine/reference/commandline/images/)
 * 容器（Container）
