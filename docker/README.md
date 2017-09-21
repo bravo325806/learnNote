@@ -16,20 +16,20 @@
 #### [Windows](https://docs.docker.com/docker-for-windows/install/)
 #### [Ubuntu](https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/#os-requirements)
 
-### docker 基本指令：
-#### 搜尋映像檔(image)
+## docker 基本指令：
+### 搜尋映像檔(image)
 ```
 docker search centos
 ```
-#### 下載image:
+### 下載image:
 ```
 docker pull <image_name>:<version>
 ```
-#### 顯示本機所有映像檔:
+### 顯示本機所有映像檔:
 ```
 sudo docker images -a
 ```
-#### 使用image創造container:
+### 使用image創造container:
 
 ```
 docker run ubuntu:14.04
@@ -53,7 +53,7 @@ sudo docker run -t -i -d -p 1000:80 ubuntu:14.04 /bin/bash
 * -p --publish
 
 
-#### 查看所有container的狀態：
+### 查看所有container的狀態：
 ```
 docker ps -a 
 ```
@@ -61,7 +61,7 @@ docker ps -a
 ```
 |CONTAINER ID | IMAGE | COMMAND | CREATED | STATUS | PORTS | NAMES
 ```
-#### 刪除image:
+### 刪除image:
 ```
 sudo docker rmi <image_ID>
 ```
@@ -75,7 +75,7 @@ sudo docker rmi 4c6f8497d662 -f
 這時候就需要將跟此image有關的container或image先刪除，才可以刪除它。
 
 
-#### 刪除conatianer:
+### 刪除conatianer:
 ```
 docker rm <container_ID> <container_ID> ... (可一次刪除多個)
 ```
@@ -88,7 +88,7 @@ docker rm ebacf392ca8236
 ###### Stop the container before attempting removal or force remove
 代表container正在運行中，需要先將它停止
 
-#### 停止container:
+### 停止container:
 ```
 docker stop <container_ID>
 ```
@@ -132,7 +132,7 @@ FROM scratch
 直接FROM scratch會讓鏡像體積更加小
 
 
- #### RUN 執行命令
+### RUN 執行命令
 RUN就像shell腳本後面直接加上終端機的命令就可以了
 
 ```
@@ -166,7 +166,7 @@ RUN apt-get update -y \
            autoclean 
 && pip3 install django 
 ```
-#### dockerfile build起來！
+### dockerfile build起來！
 ```
 docker build <路徑> . -t <NEME>
 ```
