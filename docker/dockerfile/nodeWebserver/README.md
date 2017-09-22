@@ -7,7 +7,6 @@ run  container
 docker run -tid -p 3000:3000  <ur_image_name> /bin/bash
 ```
 
-
 ```
 docker ps 
 ```
@@ -15,5 +14,5 @@ docker ps
 EXEC 
 
 ```
-docker exec -ti  <containerID> node /opt/app/index.js
+docker exec -ti  <containerID> npm start
 ```

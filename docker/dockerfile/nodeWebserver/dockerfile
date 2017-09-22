@@ -1,20 +1,18 @@
 
 #docker-version 17.06.2-ce
+
 FROM ubuntu:14.04
 MAINTAINER plusone lioa
-RUN apt-get update -y 
-RUN apt-get install curl  -y \
-    && curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-RUN apt-get install nodejs -y
-# RUN apt-get install npm -y
-
-RUN mkdir opt/app
-
+RUN apt-get update -y  \
+    && apt-get install curl  -y \
+    && curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash - \
+    && apt-get install nodejs -y \
+    && mkdir opt/app 
 COPY ./src ./opt/app 
 
 RUN cd opt/app \
     && npm install 
 EXPOSE  3000
-
-CMD [“node”,”/opt/app/index.js”]
+WORKDIR opt/app/
+CMD [“node”,”start”]
 
