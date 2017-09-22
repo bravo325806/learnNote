@@ -16,20 +16,20 @@
 #### [Windows](https://docs.docker.com/docker-for-windows/install/)
 #### [Ubuntu](https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/#os-requirements)
 
-### docker 基本指令：
-#### 搜尋映像檔(image)
+## docker 基本指令：
+### 搜尋映像檔(image)
 ```
 docker search centos
 ```
-#### 下載image:
+### 下載image:
 ```
 docker pull <image_name>:<version>
 ```
-#### 顯示本機所有映像檔:
+### 顯示本機所有映像檔:
 ```
 sudo docker images -a
 ```
-#### 使用image創造container:
+### 使用image創造container:
 
 ```
 docker run ubuntu:14.04
@@ -53,7 +53,7 @@ sudo docker run -t -i -d -p 1000:80 ubuntu:14.04 /bin/bash
 * -p --publish
 
 
-#### 查看所有container的狀態：
+### 查看所有container的狀態：
 ```
 docker ps -a 
 ```
@@ -61,7 +61,7 @@ docker ps -a
 ```
 |CONTAINER ID | IMAGE | COMMAND | CREATED | STATUS | PORTS | NAMES
 ```
-#### 刪除image:
+### 刪除image:
 ```
 sudo docker rmi <image_ID>
 ```
@@ -75,7 +75,7 @@ sudo docker rmi 4c6f8497d662 -f
 這時候就需要將跟此image有關的container或image先刪除，才可以刪除它。
 
 
-#### 刪除conatianer:
+### 刪除conatianer:
 ```
 docker rm <container_ID> <container_ID> ... (可一次刪除多個)
 ```
@@ -88,7 +88,7 @@ docker rm ebacf392ca8236
 ###### Stop the container before attempting removal or force remove
 代表container正在運行中，需要先將它停止
 
-#### 停止container:
+### 停止container:
 ```
 docker stop <container_ID>
 ```
@@ -111,15 +111,15 @@ name設定為webserver
 ### 來寫dockerfile吧！
 
 上面我們所pull到本地的Image都是來自[Docker Hub](https://hub.docker.com/)
-自己寫就可以自己去定制每一層的配置
-我們可以把每一層建構安裝或操作的命令都寫入一個腳本用這個腳本來建構自己的Image
-Image是多層存儲每一層是在前一層的基礎上進行的修改
-容器也是多層存儲是在以鏡像為基礎層在其基礎上加一層作為容器運行時的儲存層。
+###### 自己寫就可以自己去定制每一層的配置
+##### 我們可以把每一層建構安裝或操作的命令都寫入一個腳本用這個腳本來建構自己的Image
+##### Image是多層存儲每一層是在前一層的基礎上進行的修改
+##### 容器也是多層存儲是在以鏡像為基礎層在其基礎上加一層作為容器運行時的儲存層。
 
 Dockerfile是一個腳本，包含兩個部分：指令(Instrunction)和要做的行為(Argument)
 
 
-#### FROM
+### FROM 
 From 為選擇哪一個作業系統為基底，當然也可以選擇docker hub上的image(例如：mongo python node等)
 
 ```
@@ -132,7 +132,7 @@ FROM scratch
 直接FROM scratch會讓鏡像體積更加小
 
 
- #### RUN 執行命令
+### RUN 執行命令
 RUN就像shell腳本後面直接加上終端機的命令就可以了
 
 ```
@@ -166,7 +166,7 @@ RUN apt-get update -y \
            autoclean 
 && pip3 install django 
 ```
-#### dockerfile build起來！
+### dockerfile build起來！
 ```
 docker build <路徑> . -t <NEME>
 ```
@@ -178,5 +178,18 @@ docker build <路徑> . -t <NEME>
 COPY ./package.json /opt/
 ```
 就可以複製本地package.json檔案到docker內的/opt目錄啦！
+
+### EXPOSE 聲明端口
+
+```
+EXPOSE <端口1>
+```
+```
+EXPOSE 8000
+```
+聲明運行時容器提供服務端口，幫助使用者理解這個Image服務的端口
+
+`-p`是映射`<宿主端口>:<容器端口>`是將容器的對應端口服務公開給外界訪問
+##### EXPOSE 這只是一個聲明，不會因為這個聲明應用就會開啟這個端口的服務!
 
 
